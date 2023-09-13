@@ -1,0 +1,75 @@
+spec:
+  - ./src/**/*.spec.ts                  # the positional arguments!
+
+require:
+  - ts-node/register
+  - tsconfig-paths/register
+  - source-map-support/register
+  - dotenv/config
+
+extension:
+  - ts
+exit: true
+retries: 1
+
+##-- control timers
+# slow: '75'
+# timeout: '2000' # 2s, false == 0
+
+##-- REPORTS --
+# reporter: 'spec'
+# reporter-option:
+#   - 'foo=bar'
+#   - 'baz=quux'
+
+##-- control run process --
+# jobs: 1
+# parallel: false
+# recursive: false
+# delay: false
+
+# allow-uncaught: false
+# async-only: false
+# bail: false
+# check-leaks: false
+# fail-zero: true
+
+##-- control output --
+# color: true
+# diff: true
+# inline-diffs: false
+
+
+# fgrep: 'something'
+# grep: '/something/i' # also 'something'
+# file:
+#   - '/path/to/some/file'
+#   - '/path/to/some/other/file'
+# forbid-only: false
+# forbid-pending: false
+
+# global:
+#   - 'jQuery'
+#   - '$'
+
+# ignore:
+#   - '/path/to/some/ignored/file'
+# needs to be used with grep or fgrep
+# node-option:
+#   - 'unhandled-rejections=strict' # without leading "--", also V8 flags
+
+# watch: false ## setup in package.json's script for dynamic environments
+# watch-files:
+#   - 'lib/**/*.js'
+#   - 'test/**/*.js'
+# watch-ignore:
+#   - 'lib/vendor'
+
+##-- rate used
+# full-trace: false
+# trace-warnings: true # node flags ok
+# ui: 'bdd'
+# v8-stack-trace-limit: 100 # V8 flags are prepended with "v8-"
+# package: './package.json'
+# sort: false
+# growl: false

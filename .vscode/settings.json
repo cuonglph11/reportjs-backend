@@ -1,0 +1,21 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "eslint.enable": true,
+  "eslint.workingDirectories": ["."],
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.yml"
+  },
+  "eslint.validate": ["typescript"],
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "eslint.format.enable": true,
+  // run eslint on save
+
+  "prettier.enable": true,
+  "prettier.configPath": ".prettierrc.yml",
+  "prettier.ignorePath": ".prettierignore"
+}

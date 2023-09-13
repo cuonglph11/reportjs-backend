@@ -1,0 +1,7 @@
+trailingComma: 'none'
+semi: false
+tabs: false ## dùng space, không dùng tab
+tabWidth: 2
+singleQuote: true
+bracketSpacing: true
+printWidth: 80

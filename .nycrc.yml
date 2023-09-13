@@ -1,0 +1,60 @@
+# recommend run nyc with typescript
+extends: '@istanbuljs/nyc-config-typescript'
+# require: []                                 # -- a list of additional modules that nyc should attempt to require in its subprocess, e.g., @babel/register, @babel/polyfill
+# parser-plugins:                             # -- babel parser plugins to use when parsing the source
+
+check-coverage: true # -- enable check coverage
+
+#####  RESOURCEs FILEs  #####
+
+include: # -- a list of specific files that should be covered, glob patterns are supported
+  - 'src/**/*.ts' # -- [string] [default: []]
+exclude: # -- a list of specific files and directories that should be excluded from coverage, glob patterns are supported
+  - 'src/**/*.spec.ts' # -- [default: ["coverage/**","packages/*/test{,s}/**","**/*.d.ts","test{,s}/**","test{,-*}.{ js,cjs,mjs,ts,tsx,jsx}","**/*{.,-}test.{js,cjs,mjs,ts,tsx,jsx}","**/__tests__/ **","**/{ava,babel,nyc}.config.{js,cjs,mjs}","**/jest.config.{js,cjs,mjs,ts}", "**/{karma,rollup,webpack}.config.js","**/.{eslint,mocha}rc.{js,cjs}"]]
+extension: # -- a list of extensions that nyc should handle in addition to .js
+  - .ts # -- [string] [default: [".js",".cjs",".mjs",".ts",".tsx",".jsx"]]
+# ignore-class-methods: []                    # -- class method names to ignore for coverage
+
+#####  THRESHOLD  #####
+
+branches: 85
+lines: 85
+functions: 85
+statements: 85
+# per-file: false                             # -- apply threshold on separate file or entire test cases
+
+#####  REPORTERs & REPORT OPTIONs  #####
+
+reporter: # -- https://istanbul.js.org/docs/advanced/alternative-reporters/
+  - lcov # -- Tips: nyc will render report by order
+  - text
+  - text-summary
+all: false # -- check all files, even not imported in test
+skip-full: true # -- not show files pass 100% in terminal report
+skip-empty: true # -- not show empty files in terminal report
+
+#####  ARTIFACTs  #####
+
+# report-dir: ./coverage
+# clean: true                                 # -- should the .nyc_output folder be cleaned before executing tests
+# temp-dir: [./.nyc_output]                   # -- directory to output raw coverage information to. [string]
+# cache: true                                 # -- cache instrumentation results for improved performance
+# babel-cache: false                          # -- cache babel transpilation results for improved performance
+# cache-dir: ''                               # -- explicitly set location for instrumentation cache
+
+#####
+# source-map: true                            # -- should nyc detect and handle source maps?
+# auto-wrap: true                             # -- allow `return` statements outside of functions
+# use-spawn-wrap: false                       # -- use spawn-wrap instead of setting process.env.NODE_OPTIONS
+# es-modules: true                            # -- should files be treated as ES Modules
+# compact: true                               # -- should the output be compacted?
+# preserve-comments: true                     # -- should comments be preserved in the output?
+# produce-source-map: true                    # -- should source maps be produced?
+# instrument: true                            # -- should nyc handle instrumentation?
+# exclude-after-remap: true                   # -- should exclude logic be performed after the source-map remaps filenames?
+# show-process-tree: false                    # -- display the tree of spawned processes
+# silent: false                               # -- don't output a report after tests finish running
+# eager: false                                # -- instantiate the instrumenter at startup
+# hook-require: true                          # -- should nyc wrap require?
+# hook-run-in-context: false                  # -- should nyc wrap vm.runInContext?
+# hook-run-in-this-contex: false              # -- should nyc wrap vm.runInThisContext?
